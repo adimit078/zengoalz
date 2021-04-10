@@ -4,6 +4,7 @@ Description:
 Working baseline of entire app: 
     
 Working App with ToDo, Feels and Progress screens
+    
     Feels with minor bugs in CoreData 
     Graphs 
     Basic UI
