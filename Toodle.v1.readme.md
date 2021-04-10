@@ -3,10 +3,11 @@
 Description:
 Working baseline of entire app: 
     
-    Working ToDo Screen
+Working App with ToDo, Feels and Progress screens
     Feels with minor bugs in CoreData 
-    Graphs (glitchy)
+    Graphs 
     Basic UI
+    Need to add ToDo-Feels Logic 
 
 Files Created:
 
