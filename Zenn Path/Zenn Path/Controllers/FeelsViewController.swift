@@ -45,15 +45,15 @@ class FeelsViewController: UIViewController {
     }
     
     @IBAction func unsurePressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToHappy3", sender: self)
+        //self.performSegue(withIdentifier: "goToHappy3", sender: self)
     }
     
     @IBAction func sadPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToHappy2", sender: self)
+        //self.performSegue(withIdentifier: "goToHappy2", sender: self)
     }
     
     @IBAction func xSadPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToHappy1", sender: self)
+        //self.performSegue(withIdentifier: "goToHappy1", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
