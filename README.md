@@ -1,4 +1,4 @@
-This is the zennpath app.
+This is the zennpath app. (Reffering to most recent commit version)
 
 Currently, there are 2 main versions: 
     
@@ -12,10 +12,10 @@ Current zennpath summary:
 
     Better developed UI with navigation controllers and smooth transitions + better images/buttons
     Completed ToDo screen with updated interface, working completely
-    "Feels" page nearly completed - "happy user" branch working completely with suggesitons of small toDos, etc.
+    "Feels" page completed with both branches
+    Push Notifications for 24 hour reminder (ToDo reminder) 
     
 Left to do:
 
-    Work on the "sad user" "Feels" page branch
-    Finish push notifications/toDo reminders
-    
+    Complete the push Notification Branch (Asses user's ability to complete upcoming ToDo etc.)
+    Charts - (Mood over time, Mood Count, ToDos on time, ToDos early, all ToDos sorted by Date)
