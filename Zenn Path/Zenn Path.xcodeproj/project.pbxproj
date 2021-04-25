@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		484B979526212FE40093A83C /* happyFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B979426212FE40093A83C /* happyFailViewController.swift */; };
+		484B9798262186D30093A83C /* sadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B9797262186D30093A83C /* sadViewController.swift */; };
+		484B979B26222EF50093A83C /* statsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B979A26222EF50093A83C /* statsViewController.swift */; };
 		4887C80D261EC69600829014 /* happyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887C80C261EC69600829014 /* happyViewController.swift */; };
 		4887C810261F74C700829014 /* happySuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887C80F261F74C700829014 /* happySuccessViewController.swift */; };
 		48A7B923261ACF0000A989AB /* addToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7B922261ACF0000A989AB /* addToDoViewController.swift */; };
@@ -36,9 +38,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		481333F626240FF400127F1B /* Zenn Path.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zenn Path.entitlements"; sourceTree = "<group>"; };
 		4834997A261C32A7009BFF1A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		4834997C261C32A7009BFF1A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		484B979426212FE40093A83C /* happyFailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = happyFailViewController.swift; path = "Zenn Path/happyFailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		484B9797262186D30093A83C /* sadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sadViewController.swift; path = "Zenn Path/sadViewController.swift"; sourceTree = SOURCE_ROOT; };
+		484B979A26222EF50093A83C /* statsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = statsViewController.swift; path = "Zenn Path/statsViewController.swift"; sourceTree = SOURCE_ROOT; };
 		4887C80C261EC69600829014 /* happyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = happyViewController.swift; path = "Zenn Path/happyViewController.swift"; sourceTree = SOURCE_ROOT; };
 		4887C80F261F74C700829014 /* happySuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = happySuccessViewController.swift; path = "Zenn Path/happySuccessViewController.swift"; sourceTree = SOURCE_ROOT; };
 		48A7B922261ACF0000A989AB /* addToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addToDoViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +83,8 @@
 		48A7B91F261AB77600A989AB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				484B979A26222EF50093A83C /* statsViewController.swift */,
+				484B9797262186D30093A83C /* sadViewController.swift */,
 				484B979426212FE40093A83C /* happyFailViewController.swift */,
 				4887C80F261F74C700829014 /* happySuccessViewController.swift */,
 				4887C80C261EC69600829014 /* happyViewController.swift */,
@@ -117,6 +124,7 @@
 		48EB5E2B261A6E790085FEBF /* Zenn Path */ = {
 			isa = PBXGroup;
 			children = (
+				481333F626240FF400127F1B /* Zenn Path.entitlements */,
 				48EB5E2C261A6E790085FEBF /* AppDelegate.swift */,
 				48EB5E2E261A6E790085FEBF /* SceneDelegate.swift */,
 				48EB5E32261A6E790085FEBF /* Main.storyboard */,
@@ -204,8 +212,10 @@
 				48F486EB261A94C5007795DB /* toDoViewController.swift in Sources */,
 				48EB5E53261A84FA0085FEBF /* FeelsViewController.swift in Sources */,
 				48EB5E4E261A72350085FEBF /* HomeViewController.swift in Sources */,
+				484B9798262186D30093A83C /* sadViewController.swift in Sources */,
 				48EB5E37261A6E790085FEBF /* Zenn_Path.xcdatamodeld in Sources */,
 				48A7B923261ACF0000A989AB /* addToDoViewController.swift in Sources */,
+				484B979B26222EF50093A83C /* statsViewController.swift in Sources */,
 				4887C80D261EC69600829014 /* happyViewController.swift in Sources */,
 				4887C810261F74C700829014 /* happySuccessViewController.swift in Sources */,
 				484B979526212FE40093A83C /* happyFailViewController.swift in Sources */,
@@ -357,14 +367,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Zenn Path/Zenn Path.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68QLQDXK9K;
+				DEVELOPMENT_TEAM = EK9G5YS4H5;
 				INFOPLIST_FILE = "Zenn Path/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adityamittal.CoreDataTest.Zenn-Path";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navinmittal.CoreDataTest.Zenn-Path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -376,14 +387,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Zenn Path/Zenn Path.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68QLQDXK9K;
+				DEVELOPMENT_TEAM = EK9G5YS4H5;
 				INFOPLIST_FILE = "Zenn Path/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adityamittal.CoreDataTest.Zenn-Path";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navinmittal.CoreDataTest.Zenn-Path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

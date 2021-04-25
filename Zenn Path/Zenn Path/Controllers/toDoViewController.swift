@@ -24,8 +24,8 @@ class toDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         myTableView.layer.cornerRadius = 10
         
-        addButton.layer.borderWidth = 2
-        addButton.layer.borderColor = UIColor.white.cgColor
+        addButton.layer.borderWidth = 4
+        //addButton.layer.borderColor = UIColor.white.cgColor
         addButton.layer.cornerRadius = 20
         
         loadItems()

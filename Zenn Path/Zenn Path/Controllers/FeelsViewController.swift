@@ -45,15 +45,15 @@ class FeelsViewController: UIViewController {
     }
     
     @IBAction func unsurePressed(_ sender: UIButton) {
-        //self.performSegue(withIdentifier: "goToHappy3", sender: self)
+        self.performSegue(withIdentifier: "goToSad3", sender: self)
     }
     
     @IBAction func sadPressed(_ sender: UIButton) {
-        //self.performSegue(withIdentifier: "goToHappy2", sender: self)
+        self.performSegue(withIdentifier: "goToSad2", sender: self)
     }
     
     @IBAction func xSadPressed(_ sender: UIButton) {
-        //self.performSegue(withIdentifier: "goToHappy1", sender: self)
+        self.performSegue(withIdentifier: "goToSad1", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,16 +69,16 @@ class FeelsViewController: UIViewController {
                 let displayVC = segue.destination as! happyViewController
                 displayVC.newIndex = "4"
         }
-        if(segue.identifier == "goToHappy3"){
-                let displayVC = segue.destination as! happyViewController
+        if(segue.identifier == "goToSad3"){
+                let displayVC = segue.destination as! sadViewController
                 displayVC.newIndex = "3"
         }
-        if(segue.identifier == "goToHappy2"){
-                let displayVC = segue.destination as! happyViewController
+        if(segue.identifier == "goToSad2"){
+                let displayVC = segue.destination as! sadViewController
                 displayVC.newIndex = "2"
         }
-        if(segue.identifier == "goToHappy1"){
-                let displayVC = segue.destination as! happyViewController
+        if(segue.identifier == "goToSad1"){
+                let displayVC = segue.destination as! sadViewController
                 displayVC.newIndex = "1"
         }
     }

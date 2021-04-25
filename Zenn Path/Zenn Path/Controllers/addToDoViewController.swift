@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class addToDoViewController: UIViewController {
 
@@ -117,6 +118,47 @@ class addToDoViewController: UIViewController {
             
             //Saving the str array into coreData
             self.saveItems()
+            
+        //SETTING A NOTIFICATION FOR A DUE DATE
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert, .sound])
+                { (granted, error) in
+            }
+            
+            //Notif Text
+            let content = UNMutableNotificationContent()
+            content.title = "Upcoming ToDo Item!"
+            content.body = "Your ToDo called '\(newItem.title!)' is due in tommorow! Make sure to work on it!"
+            
+            //Notif Trigger
+            let enteredDate = dueDate
+            let newDate = Calendar.current.date(byAdding: .day, value: -1, to: dueDate)
+            
+            let inputFormatter = DateFormatter()
+            inputFormatter.dateFormat = "MM-dd-yyyy HH:mm"
+            let enteredDatePretty = inputFormatter.string(from: enteredDate)
+            let newDatePretty = inputFormatter.string(from: newDate!)
+            
+            print("entered date: \(enteredDatePretty)")
+            print("new date: \(newDatePretty)")
+
+            let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: newDate!)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            //Create Request
+            let uuidString = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+            
+            //Register Request
+            center.add((request)) { (error) in
+                if error != nil {
+                    print("there is an error: \(error?.localizedDescription ?? "error")")
+                }
+            }
+            
+            print("the due date of \(newToDoText.text!) is \(dueDate)")
+            dismiss(animated: true, completion: nil)
             
             //reseting the textbox to a blank
             newToDoText.text = ""

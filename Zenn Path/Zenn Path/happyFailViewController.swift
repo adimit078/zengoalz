@@ -44,7 +44,7 @@ class happyFailViewController: UIViewController, UITableViewDelegate, UITableVie
                     print("Activity: \(x.title!), Size: \(x.size)")
                     smallToDoArray.append(x)
                 }
-            }
+            } 
         }
     }
     

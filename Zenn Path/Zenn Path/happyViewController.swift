@@ -17,7 +17,7 @@ class happyViewController: UIViewController, UITextFieldDelegate {
     var feelIndex = GlobalVar.globalFeelIndex
     var toDoSuccess = Int()
     
-    var newIndex: String = "hell"
+    var newIndex: String = ""
     
     @IBOutlet weak var activity1Field: UITextField!
     @IBOutlet weak var activity2Feild: UITextField!
@@ -102,6 +102,8 @@ class happyViewController: UIViewController, UITextFieldDelegate {
             //Level of control with ToDos
             newFeel.controlLevel = Int16(toDoSuccess)
             
+            //Date Entered
+            //newFeel.dateEntered = Date()
             
             //Appending instance to the array containing all toDo instances
             feelsArray.append(newFeel)
@@ -110,7 +112,7 @@ class happyViewController: UIViewController, UITextFieldDelegate {
             self.saveItems()
         }
         
-        if toDoSuccess > 2 {
+        if toDoSuccess > 1 {
             self.performSegue(withIdentifier: "goToHappySuccess", sender: self)
         } else {
             self.performSegue(withIdentifier: "goToHappyFail", sender: self)
