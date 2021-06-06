@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		484B979526212FE40093A83C /* happyFailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B979426212FE40093A83C /* happyFailViewController.swift */; };
+		484B9798262186D30093A83C /* sadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B9797262186D30093A83C /* sadViewController.swift */; };
+		484B979B26222EF50093A83C /* statsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B979A26222EF50093A83C /* statsViewController.swift */; };
+		484EAC53264254B900D5F837 /* LineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484EAC52264254B900D5F837 /* LineViewController.swift */; };
+		4887C80D261EC69600829014 /* happyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887C80C261EC69600829014 /* happyViewController.swift */; };
+		4887C810261F74C700829014 /* happySuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887C80F261F74C700829014 /* happySuccessViewController.swift */; };
+		48A7B923261ACF0000A989AB /* addToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A7B922261ACF0000A989AB /* addToDoViewController.swift */; };
+		48CEB9DA2642520D0017FADA /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CEB9D92642520D0017FADA /* BarViewController.swift */; };
+		48EB5E2D261A6E790085FEBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB5E2C261A6E790085FEBF /* AppDelegate.swift */; };
+		48EB5E2F261A6E790085FEBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB5E2E261A6E790085FEBF /* SceneDelegate.swift */; };
+		48EB5E34261A6E790085FEBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EB5E32261A6E790085FEBF /* Main.storyboard */; };
+		48EB5E37261A6E790085FEBF /* Zenn_Path.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 48EB5E35261A6E790085FEBF /* Zenn_Path.xcdatamodeld */; };
+		48EB5E39261A6E7A0085FEBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EB5E38261A6E7A0085FEBF /* Assets.xcassets */; };
+		48EB5E3C261A6E7A0085FEBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48EB5E3A261A6E7A0085FEBF /* LaunchScreen.storyboard */; };
+		48EB5E4E261A72350085FEBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB5E4D261A72350085FEBF /* HomeViewController.swift */; };
+		48EB5E53261A84FA0085FEBF /* FeelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB5E52261A84FA0085FEBF /* FeelsViewController.swift */; };
+		48F486EB261A94C5007795DB /* toDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F486EA261A94C5007795DB /* toDoViewController.swift */; };
+		55C3DDF209996AB66A7C1EB6 /* Pods_Zenn_Path.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE8DD046288B1B73A79BBD0 /* Pods_Zenn_Path.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4834998A261C32A8009BFF1A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		481333F626240FF400127F1B /* Zenn Path.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Zenn Path.entitlements"; sourceTree = "<group>"; };
+		4834997A261C32A7009BFF1A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4834997C261C32A7009BFF1A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		484B979426212FE40093A83C /* happyFailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = happyFailViewController.swift; path = "Zenn Path/happyFailViewController.swift"; sourceTree = SOURCE_ROOT; };
+		484B9797262186D30093A83C /* sadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = sadViewController.swift; path = "Zenn Path/sadViewController.swift"; sourceTree = SOURCE_ROOT; };
+		484B979A26222EF50093A83C /* statsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = statsViewController.swift; path = "Zenn Path/statsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		484EAC52264254B900D5F837 /* LineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineViewController.swift; sourceTree = SOURCE_ROOT; };
+		4887C80C261EC69600829014 /* happyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = happyViewController.swift; path = "Zenn Path/happyViewController.swift"; sourceTree = SOURCE_ROOT; };
+		4887C80F261F74C700829014 /* happySuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = happySuccessViewController.swift; path = "Zenn Path/happySuccessViewController.swift"; sourceTree = SOURCE_ROOT; };
+		48A7B922261ACF0000A989AB /* addToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addToDoViewController.swift; sourceTree = "<group>"; };
+		48CEB9D92642520D0017FADA /* BarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = SOURCE_ROOT; };
+		48EB5E29261A6E790085FEBF /* Zenn Path.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zenn Path.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48EB5E2C261A6E790085FEBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48EB5E2E261A6E790085FEBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		48EB5E33261A6E790085FEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48EB5E36261A6E790085FEBF /* Zenn_Path.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zenn_Path.xcdatamodel; sourceTree = "<group>"; };
+		48EB5E38261A6E7A0085FEBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48EB5E3B261A6E7A0085FEBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48EB5E3D261A6E7A0085FEBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48EB5E4D261A72350085FEBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		48EB5E52261A84FA0085FEBF /* FeelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelsViewController.swift; sourceTree = "<group>"; };
+		48F486EA261A94C5007795DB /* toDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toDoViewController.swift; sourceTree = "<group>"; };
+		6EE8DD046288B1B73A79BBD0 /* Pods_Zenn_Path.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zenn_Path.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67B011A344628F4DCC1043E /* Pods-Zenn Path.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zenn Path.release.xcconfig"; path = "Target Support Files/Pods-Zenn Path/Pods-Zenn Path.release.xcconfig"; sourceTree = "<group>"; };
+		B6BBB6BF8E8E026E844E3F7F /* Pods-Zenn Path.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zenn Path.debug.xcconfig"; path = "Target Support Files/Pods-Zenn Path/Pods-Zenn Path.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48EB5E26261A6E790085FEBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C3DDF209996AB66A7C1EB6 /* Pods_Zenn_Path.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48349979261C32A7009BFF1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4834997A261C32A7009BFF1A /* WidgetKit.framework */,
+				4834997C261C32A7009BFF1A /* SwiftUI.framework */,
+				6EE8DD046288B1B73A79BBD0 /* Pods_Zenn_Path.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48A7B91F261AB77600A989AB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				484EAC52264254B900D5F837 /* LineViewController.swift */,
+				48CEB9D92642520D0017FADA /* BarViewController.swift */,
+				484B979A26222EF50093A83C /* statsViewController.swift */,
+				484B9797262186D30093A83C /* sadViewController.swift */,
+				484B979426212FE40093A83C /* happyFailViewController.swift */,
+				4887C80F261F74C700829014 /* happySuccessViewController.swift */,
+				4887C80C261EC69600829014 /* happyViewController.swift */,
+				48EB5E52261A84FA0085FEBF /* FeelsViewController.swift */,
+				48EB5E4D261A72350085FEBF /* HomeViewController.swift */,
+				48F486EA261A94C5007795DB /* toDoViewController.swift */,
+				48A7B922261ACF0000A989AB /* addToDoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		48A7B920261AB7B000A989AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48EB5E35261A6E790085FEBF /* Zenn_Path.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48EB5E20261A6E790085FEBF = {
+			isa = PBXGroup;
+			children = (
+				48EB5E2B261A6E790085FEBF /* Zenn Path */,
+				48349979261C32A7009BFF1A /* Frameworks */,
+				AA8E66F9FE1646B323BCD805 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		48EB5E2A261A6E790085FEBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48EB5E29261A6E790085FEBF /* Zenn Path.app */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		48EB5E2B261A6E790085FEBF /* Zenn Path */ = {
+			isa = PBXGroup;
+			children = (
+				481333F626240FF400127F1B /* Zenn Path.entitlements */,
+				48EB5E2C261A6E790085FEBF /* AppDelegate.swift */,
+				48EB5E2E261A6E790085FEBF /* SceneDelegate.swift */,
+				48EB5E32261A6E790085FEBF /* Main.storyboard */,
+				48A7B91F261AB77600A989AB /* Controllers */,
+				48A7B920261AB7B000A989AB /* Model */,
+				48EB5E2A261A6E790085FEBF /* Products */,
+				48EB5E38261A6E7A0085FEBF /* Assets.xcassets */,
+				48EB5E3A261A6E7A0085FEBF /* LaunchScreen.storyboard */,
+				48EB5E3D261A6E7A0085FEBF /* Info.plist */,
+			);
+			path = "Zenn Path";
+			sourceTree = "<group>";
+		};
+		AA8E66F9FE1646B323BCD805 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6BBB6BF8E8E026E844E3F7F /* Pods-Zenn Path.debug.xcconfig */,
+				A67B011A344628F4DCC1043E /* Pods-Zenn Path.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48EB5E28261A6E790085FEBF /* Zenn Path */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48EB5E40261A6E7A0085FEBF /* Build configuration list for PBXNativeTarget "Zenn Path" */;
+			buildPhases = (
+				34E84A03FC6BCE9A9074900A /* [CP] Check Pods Manifest.lock */,
+				48EB5E25261A6E790085FEBF /* Sources */,
+				48EB5E26261A6E790085FEBF /* Frameworks */,
+				48EB5E27261A6E790085FEBF /* Resources */,
+				4834998A261C32A8009BFF1A /* Embed App Extensions */,
+				ACDE5C0615CC725915146360 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Zenn Path";
+			productName = "Zenn Path";
+			productReference = 48EB5E29261A6E790085FEBF /* Zenn Path.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48EB5E21261A6E790085FEBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					48EB5E28261A6E790085FEBF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 48EB5E24261A6E790085FEBF /* Build configuration list for PBXProject "Zenn Path" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48EB5E20261A6E790085FEBF;
+			productRefGroup = 48EB5E2A261A6E790085FEBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48EB5E28261A6E790085FEBF /* Zenn Path */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48EB5E27261A6E790085FEBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48EB5E3C261A6E7A0085FEBF /* LaunchScreen.storyboard in Resources */,
+				48EB5E39261A6E7A0085FEBF /* Assets.xcassets in Resources */,
+				48EB5E34261A6E790085FEBF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34E84A03FC6BCE9A9074900A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zenn Path-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACDE5C0615CC725915146360 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zenn Path/Pods-Zenn Path-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zenn Path/Pods-Zenn Path-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zenn Path/Pods-Zenn Path-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48EB5E25261A6E790085FEBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F486EB261A94C5007795DB /* toDoViewController.swift in Sources */,
+				48EB5E53261A84FA0085FEBF /* FeelsViewController.swift in Sources */,
+				48EB5E4E261A72350085FEBF /* HomeViewController.swift in Sources */,
+				484B9798262186D30093A83C /* sadViewController.swift in Sources */,
+				48EB5E37261A6E790085FEBF /* Zenn_Path.xcdatamodeld in Sources */,
+				48A7B923261ACF0000A989AB /* addToDoViewController.swift in Sources */,
+				484B979B26222EF50093A83C /* statsViewController.swift in Sources */,
+				4887C80D261EC69600829014 /* happyViewController.swift in Sources */,
+				4887C810261F74C700829014 /* happySuccessViewController.swift in Sources */,
+				484B979526212FE40093A83C /* happyFailViewController.swift in Sources */,
+				48EB5E2D261A6E790085FEBF /* AppDelegate.swift in Sources */,
+				48EB5E2F261A6E790085FEBF /* SceneDelegate.swift in Sources */,
+				484EAC53264254B900D5F837 /* LineViewController.swift in Sources */,
+				48CEB9DA2642520D0017FADA /* BarViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		48EB5E32261A6E790085FEBF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EB5E33261A6E790085FEBF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48EB5E3A261A6E7A0085FEBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48EB5E3B261A6E7A0085FEBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48EB5E3E261A6E7A0085FEBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48EB5E3F261A6E7A0085FEBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48EB5E41261A6E7A0085FEBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6BBB6BF8E8E026E844E3F7F /* Pods-Zenn Path.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Zenn Path/Zenn Path.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EK9G5YS4H5;
+				INFOPLIST_FILE = "Zenn Path/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navinmittal.CoreDataTest.Zenn-Path";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48EB5E42261A6E7A0085FEBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A67B011A344628F4DCC1043E /* Pods-Zenn Path.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Zenn Path/Zenn Path.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EK9G5YS4H5;
+				INFOPLIST_FILE = "Zenn Path/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.navinmittal.CoreDataTest.Zenn-Path";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48EB5E24261A6E790085FEBF /* Build configuration list for PBXProject "Zenn Path" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EB5E3E261A6E7A0085FEBF /* Debug */,
+				48EB5E3F261A6E7A0085FEBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48EB5E40261A6E7A0085FEBF /* Build configuration list for PBXNativeTarget "Zenn Path" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48EB5E41261A6E7A0085FEBF /* Debug */,
+				48EB5E42261A6E7A0085FEBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		48EB5E35261A6E790085FEBF /* Zenn_Path.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				48EB5E36261A6E790085FEBF /* Zenn_Path.xcdatamodel */,
+			);
+			currentVersion = 48EB5E36261A6E790085FEBF /* Zenn_Path.xcdatamodel */;
+			path = Zenn_Path.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 48EB5E21261A6E790085FEBF /* Project object */;
+}
