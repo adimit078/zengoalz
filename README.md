@@ -14,8 +14,10 @@ Current zennpath summary:
     Completed ToDo screen with updated interface, working completely
     "Feels" page completed with both branches
     Push Notifications for 24 hour reminder (ToDo reminder) 
+    Completed Chart Setup
     
 Left to do:
 
     Complete the push Notification Branch (Asses user's ability to complete upcoming ToDo etc.)
-    Charts - (Mood over time, Mood Count, ToDos on time, ToDos early, all ToDos sorted by Date)
+    Complete Feedback Loop
+  
