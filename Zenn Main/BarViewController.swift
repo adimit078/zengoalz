@@ -11,20 +11,31 @@ import Charts
 
 class BarViewController: UIViewController, ChartViewDelegate {
     
+    // MARK: - OUTLET
+    @IBOutlet weak var VW: UIView!
+    
+    
+    // MARK: - PROPERTY
     let barchart = BarChartView()
-
+    
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         
         barchart.delegate = self
     }
     
+    
+    // MARK: - UI SETUP
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        barchart.frame = CGRect(x: 10, y: 10, width: 400, height: 500)
-        barchart.center = view.center
-        view.addSubview(barchart)
+        //        barchart.frame = CGRect(x: 10, y: 10, width: 370, height: 470)
+        barchart.frame = CGRect(x: 30, y: 20, width: 360, height: 390)
+        //        barchart.center = view.center
+        //        view.addSubview(barchart)
+        VW.addSubview(barchart)
         
         var entries = [BarChartDataEntry]()
         
@@ -40,5 +51,5 @@ class BarViewController: UIViewController, ChartViewDelegate {
         
         barchart.data = data
     }
-
+    
 }

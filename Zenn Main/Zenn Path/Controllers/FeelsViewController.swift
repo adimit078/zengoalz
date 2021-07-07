@@ -8,34 +8,38 @@
 import UIKit
 
 class FeelsViewController: UIViewController {
-
+    
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
+    
+    // MARK: - OUTLET
     @IBOutlet weak var xHappyView: UIView!
     @IBOutlet weak var happyView: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var unsureView: UIView!
     @IBOutlet weak var sadView: UIView!
     @IBOutlet weak var xSadView: UIView!
-
+    
+    // MARK: - PROPERTY
     var feelIndex = GlobalVar.globalFeelIndex
     var text: String = ""
-    
     var initialIndex: String = ""
     
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        xHappyView.layer.cornerRadius = 40
-        happyView.layer.cornerRadius = 40
-        contentView.layer.cornerRadius = 40
-        unsureView.layer.cornerRadius = 40
-        sadView.layer.cornerRadius = 40
-        xSadView.layer.cornerRadius = 40
+        
+//        xHappyView.layer.cornerRadius = 40
+//        happyView.layer.cornerRadius = 40
+//        contentView.layer.cornerRadius = 40
+//        unsureView.layer.cornerRadius = 40
+//        sadView.layer.cornerRadius = 40
+//        xSadView.layer.cornerRadius = 40
         
         print(dataFilePath)
     }
-
+    
+    // MARK: - ALL IBACTION METHOD
     @IBAction func xHappy(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToHappy6", sender: self)
     }
@@ -60,31 +64,31 @@ class FeelsViewController: UIViewController {
         self.performSegue(withIdentifier: "goToSad1", sender: self)
     }
     
+    //MARK:- SEGUE METHOD FOR NAVIGATION
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goToHappy6"){
-                let displayVC = segue.destination as! happyViewController
-                displayVC.newIndex = "6"
+            let displayVC = segue.destination as! HappyViewController
+            displayVC.newIndex = "6"
         }
         if(segue.identifier == "goToHappy5"){
-                let displayVC = segue.destination as! happyViewController
-                displayVC.newIndex = "5"
+            let displayVC = segue.destination as! HappyViewController
+            displayVC.newIndex = "5"
         }
         if(segue.identifier == "goToHappy4"){
-                let displayVC = segue.destination as! happyViewController
-                displayVC.newIndex = "4"
+            let displayVC = segue.destination as! HappyViewController
+            displayVC.newIndex = "4"
         }
         if(segue.identifier == "goToSad3"){
-                let displayVC = segue.destination as! sadViewController
-                displayVC.newIndex = "3"
+            let displayVC = segue.destination as! SadViewController
+            displayVC.newIndex = "3"
         }
         if(segue.identifier == "goToSad2"){
-                let displayVC = segue.destination as! sadViewController
-                displayVC.newIndex = "2"
+            let displayVC = segue.destination as! SadViewController
+            displayVC.newIndex = "2"
         }
         if(segue.identifier == "goToSad1"){
-                let displayVC = segue.destination as! sadViewController
-                displayVC.newIndex = "1"
+            let displayVC = segue.destination as! SadViewController
+            displayVC.newIndex = "1"
         }
     }
-    
 }

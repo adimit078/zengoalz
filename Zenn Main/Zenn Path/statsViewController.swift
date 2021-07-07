@@ -1,5 +1,5 @@
 //
-//  statsViewController.swift
+//  StatsViewController.swift
 //  Zenn Path
 //
 //  Created by Aditya Mittal on 4/10/21.
@@ -7,16 +7,10 @@
 
 import UIKit
 import CoreData
-class statsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-    var feelsArray = GlobalVar.globalFeels
-    var happyArray = [Feels]()
-    var sadArray = [Feels]()
-    var arrayCount = Int()
+class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    //MARK:- Outlet
     @IBOutlet weak var happyView: UIView!
     @IBOutlet weak var happyTableView: UITableView!
     @IBOutlet weak var chartsView: UIView!
@@ -27,21 +21,60 @@ class statsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var barButton: UIButton!
     @IBOutlet weak var lineButton: UIButton!
     
+    
+    // MARK: - PROPERTY
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var feelsArray = GlobalVar.globalFeels
+    var happyArray = [Feels]()
+    var sadArray = [Feels]()
+    var arrayCount = Int()
+    
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-            
+        
         print("hello!!")
-        happyView.layer.cornerRadius = 15
-        happyTableView.layer.cornerRadius = 15
+        loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadItems()
         
-        chartsView.layer.cornerRadius = 15
+        print("hello")
+        print(happyArray)
+        print("SAD")
+        print(sadArray)
         
-        sadView.layer.cornerRadius = 15
-        sadTableView.layer.cornerRadius = 15
-        
-        barButton.layer.cornerRadius = 15
-        lineButton.layer.cornerRadius = 15
-        
+        happyTableView.reloadData()
+        sadTableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadItems()
+        happyTableView.reloadData()
+        sadTableView.reloadData()
+    }
+    
+    // MARK: - UI SETUP
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+
+
+    //MARK:- ALL IBACTION METHOD
+    @IBAction func barPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToBar", sender: self)
+    }
+    
+    @IBAction func linePressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToLine", sender: self)
+    }
+
+    
+    // MARK: - ALL CUSTOM FUNCTION
+    func loadData() {
         loadItems()
         
         getActivity()
@@ -59,25 +92,38 @@ class statsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         sadTableView.dataSource = self
         
         sadTableView.reloadData()
+        
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    
+    func getActivity() {
+        if feelsArray.count != 0 {
+            for x in feelsArray{
+                if x.feelIndex >= 4 {
+                    happyArray.append(x)
+                    //print("happy activities: \(x.activity!)")
+                }
+            }
+        }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        loadItems()
-        
-        print("hello")
-        print(happyArray)
-        print("SAD")
-        print(sadArray)
-        
-        happyTableView.reloadData()
-        sadTableView.reloadData()
+    func getSadActivity() {
+        if feelsArray.count != 0 {
+            for x in feelsArray{
+                if x.feelIndex <= 3 {
+                    sadArray.append(x)
+                    //print("sad activities: \(x.activity!)")
+                }
+            }
+        }
     }
 
-//HappyTableView
+    
+    
+    
+    
+    
+    //MARK:- UITableView DELEGATE METHOD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView.tag == 1 {
             arrayCount = happyArray.count
@@ -90,16 +136,10 @@ class statsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        loadItems()
-        happyTableView.reloadData()
-        sadTableView.reloadData()
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
-
+        cell.textLabel?.font = UIFont(name: "Futura", size: 15.0)
         if tableView.tag == 1 {
             let item = happyArray[indexPath.row]
             cell.textLabel?.text = item.activity
@@ -107,45 +147,16 @@ class statsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let sadItem = sadArray[indexPath.row]
             cell.textLabel?.text = sadItem.activity
         }
-
         return cell
     }
     
-    @IBAction func barPressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToBar", sender: self)
-    }
-    
-    @IBAction func linePressed(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToLine", sender: self)
-
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
     }
     
     
-//Get happy activites
-    func getActivity() {
-        if feelsArray.count != 0 {
-            for x in feelsArray{
-                if x.feelIndex >= 4 {
-                    happyArray.append(x)
-                    //print("happy activities: \(x.activity!)")
-                }
-            }
-        }
-    }
     
-//Get sad activites
-    func getSadActivity() {
-        if feelsArray.count != 0 {
-            for x in feelsArray{
-                if x.feelIndex <= 3 {
-                    sadArray.append(x)
-                    //print("sad activities: \(x.activity!)")
-                }
-            }
-        }
-    }
-
-//Save + Load Items
+    //MARK:- DATABSE SAVE + LOAD ITEMS
     func saveItems() {
         do{
             try context.save()
@@ -153,7 +164,7 @@ class statsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             print("error saving context: \(error)")
         }
     }
-        
+    
     func loadItems() {
         let request: NSFetchRequest<Feels> = Feels.fetchRequest()
         do {

@@ -11,35 +11,54 @@ import CoreData
 
 class LineViewController: UIViewController, ChartViewDelegate {
     
-    var lineChart = LineChartView()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var feelsArray = GlobalVar.globalFeels
-    let entry1 = Double()
-
-    
-    
+    //MARK:- Outlet
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var dateOutput: UILabel!
     @IBOutlet weak var feelingOutput: UILabel!
     @IBOutlet weak var chartView: UIView!
     @IBOutlet weak var reasonOutput: UILabel!
     
+    
+    
+    //MARK: PROPERTY
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    var lineChart = LineChartView()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var feelsArray = GlobalVar.globalFeels
+    let entry1 = Double()
+    
+    
+    
+    //MARK:- LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        lineChart.delegate = self
+        loadData()
         
-        infoView.layer.cornerRadius = 20
-        chartView.layer.cornerRadius = 20
+        //        lineChart.delegate = self
+        //
+        //        loadItems()
         
-        loadItems()
+        //        infoView.layer.cornerRadius = 20
+        //        chartView.layer.cornerRadius = 20
     }
     
+    // MARK: - UI SETUP
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        lineChart.frame = CGRect(x: 24, y: 182, width: 360, height: 340)
+        //        lineChart.frame = CGRect(x: 24, y: 182, width: 360, height: 340)
+        self.ChartUISetup()
+        
+    }
+    
+    
+    //MARK:- CHART FUNCTION
+    func ChartUISetup()
+    {
+        lineChart.frame = CGRect(x: 20, y: 30, width: 317, height: 270)
+        chartView.addSubview(lineChart)
+        
         //lineChart.center = view.center
         
         lineChart.rightAxis.enabled = false
@@ -58,10 +77,9 @@ class LineViewController: UIViewController, ChartViewDelegate {
         lineChart.xAxis.labelTextColor = .white
         lineChart.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         lineChart.xAxis.axisLineColor = .white
-        
         lineChart.animate(xAxisDuration: 1)
         
-        view.addSubview(lineChart)
+        //        view.addSubview(lineChart)
         
         var entries = [ChartDataEntry]()
         
@@ -92,8 +110,8 @@ class LineViewController: UIViewController, ChartViewDelegate {
         print(feelsArray.count)
         let feelCurrent = (feelsArray[Int(feelCount)-1])
         let dateEntered = feelCurrent.dateEntered
-        var feelIndex  = feelCurrent.feelIndex
-        var feelActivity = feelCurrent.activity
+        let feelIndex  = feelCurrent.feelIndex
+        let feelActivity = feelCurrent.activity
         
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "MMM d, h:mm a"
@@ -113,18 +131,24 @@ class LineViewController: UIViewController, ChartViewDelegate {
         
         print("On \(datePretty), you felt like a: \(feelIndex) ---- (\(Int(feelCount)-1),\(feelIndex))")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
-//Save + Load Items
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    //MARK:- ALL CUSTOM FUNCTION
+    func loadData() {
+        lineChart.delegate = self
+        loadItems()
+    }
+    
+    //MARK:- DATABASE SAVE + LOAD ITEMS
     func saveItems() {
         do{
             try context.save()
@@ -132,7 +156,7 @@ class LineViewController: UIViewController, ChartViewDelegate {
             print("error saving context: \(error)")
         }
     }
-        
+    
     func loadItems() {
         let request: NSFetchRequest<Feels> = Feels.fetchRequest()
         do {
@@ -141,5 +165,5 @@ class LineViewController: UIViewController, ChartViewDelegate {
             "error fetching data"
         }
     }
-
+    
 }

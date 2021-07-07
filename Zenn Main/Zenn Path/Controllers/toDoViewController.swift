@@ -1,5 +1,5 @@
 //
-//  toDoViewController.swift
+//  ToDoViewController.swift
 //  Zenn Path
 //
 //  Created by Aditya Mittal on 4/4/21.
@@ -8,42 +8,67 @@
 import UIKit
 import CoreData
 
-class toDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // MARK: - OUTLET
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
+    
+    // MARK: - PROPERTY
     var str = GlobalVar.globalToDo
     let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     var dateCompleted = Date()
     
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myTableView.layer.cornerRadius = 10
-        
-        addButton.layer.borderWidth = 4
         //addButton.layer.borderColor = UIColor.white.cgColor
-        addButton.layer.cornerRadius = 20
         
-        loadItems()
-        myTableView.reloadData()
+        //
+        //        myTableView.layer.cornerRadius = 10
+        //
+        //        addButton.layer.borderWidth = 4
+        //        //addButton.layer.borderColor = UIColor.white.cgColor
+        //        addButton.layer.cornerRadius = 20
         
-        myTableView.delegate = self
-        myTableView.dataSource = self
-    }
-    
-//Table View
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return str.count
+        
+        loadData()
+        //        loadItems()
+        //        myTableView.reloadData()
+        //
+        //        myTableView.delegate = self
+        //        myTableView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         loadItems()
         myTableView.reloadData()
     }
+    
+    // MARK: - ALL CUSTOM FUNCTION
+    func loadData() {
+        
+        loadItems()
+        myTableView.reloadData()
+        myTableView.delegate = self
+        myTableView.dataSource = self
+        
+    }
+    
+    
+    // MARK: - SEGUE METHOD FOR NAVIGATION
+    @IBAction func unwindToOne (_ sender: UIStoryboardSegue){}
+    
+    
+    //MARK:- UITableView DELEGATE METHOD
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return str.count
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -52,8 +77,25 @@ class toDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         cell.textLabel?.text = item.title
         
+        cell.textLabel?.font = UIFont(name: "Futura", size: 15.0)
+        
         cell.accessoryType = item.done ? .checkmark : .none
-
+        
+        cell.imageView?.image = UIImage(named: "none")
+        
+        switch item.priority {
+        case 0:
+            cell.imageView?.image = UIImage(named: "none")
+        case 1:
+            cell.imageView?.image = UIImage(named: "low")
+        case 2:
+            cell.imageView?.image = UIImage(named: "medium")
+        case 3:
+            cell.imageView?.image = UIImage(named: "high")
+        default:
+            print("sdsddsf")
+        }
+        
         return cell
     }
     
@@ -73,14 +115,14 @@ class toDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         else if item.size == 2 {size = "Medium"}
         else if item.size == 3 {size = "Large"}
         else if item.size == 4 {size = "Extra Large"}
-
-//        let newItem = Item(context: self.context)
-//        dateCompleted = Date()
-//        print("The date you have completed: \(str[indexPath.row])     \(dateCompleted)")
-//        newItem.dateCompleted = dateCompleted
-
+        
+        //        let newItem = Item(context: self.context)
+        //        dateCompleted = Date()
+        //        print("The date you have completed: \(str[indexPath.row])     \(dateCompleted)")
+        //        newItem.dateCompleted = dateCompleted
+        
         saveItems()
-
+        
         //tableView.deselectRow(at: indexPath, animated: true)
         
         myTableView.reloadData()
@@ -90,6 +132,8 @@ class toDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         let datePretty = dateFormatterPrint.string(from: item.dueDate!)
         
         let alert = UIAlertController(title: "ToDo: \(item.title!)", message: "Due Date: \(datePretty) \nSize: \(size) \nPriority Level: \(priority)", preferredStyle: UIAlertController.Style.alert)
+        alert.setTitlet(font: UIFont(name: "Futura", size: 20.0), color: .black)
+        alert.setMessage(font: UIFont(name: "Futura", size: 15.0), color: .black)
         alert.addAction(UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
@@ -103,21 +147,27 @@ class toDoViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.saveItems()
             loadItems()
-
+            
             myTableView.reloadData()
         }
+        
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
     }
     
-//Save Items
+    
+    
+    //MARK:- DATABSE SAVE + LOAD ITEMS
     func saveItems() {
-            
+        
         do{
             try context.save()
         } catch {
             print("error saving context: \(error)")
         }
     }
-        
+    
     func loadItems() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         request.returnsObjectsAsFaults = false
@@ -128,7 +178,7 @@ class toDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    @IBAction func unwindToOne (_ sender: UIStoryboardSegue){}
-
+    
+    
 }
 

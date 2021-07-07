@@ -1,5 +1,5 @@
 //
-//  happyFailViewController.swift
+//  HappyFailViewController.swift
 //  Zenn Path
 //
 //  Created by Aditya Mittal on 4/9/21.
@@ -8,24 +8,46 @@
 import UIKit
 import CoreData
 
-class happyFailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class HappyFailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var itemArray = GlobalVar.globalToDo
-    var smallToDoArray = [Item]()
-    
+    // MARK: - OUTLET
     @IBOutlet weak var bigView: UIView!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var goButton: UIButton!
     
+    // MARK: - PROPERTY
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var itemArray = GlobalVar.globalToDo
+    var smallToDoArray = [Item]()
+    
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         
-        bigView.layer.cornerRadius = 20
-        myTableView.layer.cornerRadius = 20
-        goButton.layer.cornerRadius = 30
-
+//        loadItems()
+//
+//        myTableView.reloadData()
+//        getActivity()
+//
+//        myTableView.delegate = self
+//        myTableView.dataSource = self
+//
+//        bigView.layer.cornerRadius = 20
+//        myTableView.layer.cornerRadius = 20
+//        goButton.layer.cornerRadius = 30
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadItems()
+        myTableView.reloadData()
+    }
+    
+    
+    // MARK: - ALL CUSTOM FUNCTION
+    func loadData()
+    {
         loadItems()
         
         myTableView.reloadData()
@@ -34,8 +56,7 @@ class happyFailViewController: UIViewController, UITableViewDelegate, UITableVie
         myTableView.delegate = self
         myTableView.dataSource = self
     }
-
-//Get SMALL TODOs
+    
     func getActivity() {
         print("Item array: \(itemArray)")
         if itemArray.count != 0 {
@@ -48,29 +69,6 @@ class happyFailViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-//Table View
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return smallToDoArray.count
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        loadItems()
-        myTableView.reloadData()
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let item = smallToDoArray[indexPath.row]
-        
-        cell.textLabel?.text = item.title
-        
-        cell.accessoryType = item.done ? .checkmark : .none
-
-        return cell
-    }
-
-//Load Items
     func loadItems() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
         do {
@@ -80,6 +78,27 @@ class happyFailViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    //MARK:- UITableView DELEGATE METHOD
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return smallToDoArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let item = smallToDoArray[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        
+        cell.accessoryType = item.done ? .checkmark : .none
+        
+        cell.textLabel?.font = UIFont(name: "Futura", size: 15.0)
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
     
     
 }

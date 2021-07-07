@@ -1,5 +1,5 @@
 //
-//  sadViewController.swift
+//  SadViewController.swift
 //  Zenn Path
 //
 //  Created by Aditya Mittal on 4/10/21.
@@ -8,39 +8,59 @@
 import UIKit
 import CoreData
 
-class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SadViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    let goToSadArray = [""]
-    
-    var feelsArray = GlobalVar.globalFeels
-    var happyArray = [Feels]()
-    var newIndex = String()
-    
+    //MARK:- OUTLET
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var strongButton: UIButton!
-    
     @IBOutlet weak var activity3Input: UITextField!
     @IBOutlet weak var myTableView: UITableView!
     
+    
+    // MARK: - PROPERTY
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let goToSadArray = [""]
+    var feelsArray = GlobalVar.globalFeels
+    var happyArray = [Feels]()
+    var newIndex = String()
+    
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firstView.layer.cornerRadius = 20
-        secondView.layer.cornerRadius = 20
-        
-        myTableView.layer.cornerRadius = 20
-
-        strongButton.layer.cornerRadius = 30
-        
-    
         self.view.backgroundColor = UIColor.darkGray
+        loadData()
         
+//        loadItems()
+//
+//        getActivity()
+//        myTableView.reloadData()
+//
+//        myTableView.delegate = self
+//        myTableView.dataSource = self
         
+//        firstView.layer.cornerRadius = 20
+//        secondView.layer.cornerRadius = 20
+//        
+//        myTableView.layer.cornerRadius = 20
+//
+//        strongButton.layer.cornerRadius = 30
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loadItems()
+        myTableView.reloadData()
+    }
+    
+    //MARK:- Custom Function
+    
+    func loadData(){
         loadItems()
         
         getActivity()
@@ -50,7 +70,8 @@ class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         myTableView.dataSource = self
     }
     
-//"I'm Strong" Pressed
+    
+    // MARK: - ALL IBACTION METHOD
     @IBAction func strongPressed(_ sender: UIButton) {
         //checking that the text box is not empty
         if (activity3Input.text != ""){
@@ -65,29 +86,26 @@ class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 newFeel.feelCount = 1
             }
             
-            //Logging user's happiness
+            //mark:- Logging user's happiness
             newFeel.feelIndex = Int16(newIndex) ?? 4
             
-            //Logging activity1 (WHAT HAVE YOU BEEN UP TO?)
+            //mark:- Logging activity1 (WHAT HAVE YOU BEEN UP TO?)
             newFeel.activity = activity3Input.text
             
-            //Date Entered
+            //mark:- Date Entered
             newFeel.dateEntered = Date()
             
-            //Appending instance to the array containing all toDo instances
+            //mark:- Appending instance to the array containing all toDo instances
             feelsArray.append(newFeel)
             
-            //Saving the str array into coreData
+            //mark:- Saving the str array into coreData
             self.saveItems()
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
     
-//Get happy activites
+    
+    // MARK: - ALL CUSTOM FUNCTION
     func getActivity() {
         if feelsArray.count != 0 {
             for x in feelsArray{
@@ -99,14 +117,10 @@ class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
     
-//Table View
+    
+    //MARK:- UITableView DELEGATE METHOD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return happyArray.count
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        loadItems()
-        myTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -116,10 +130,22 @@ class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         cell.textLabel?.text = item.activity
         
+        cell.textLabel?.font = UIFont(name: "Futura", size: 15.0)
         return cell
     }
     
-//Save + Load Items
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return .leastNormalMagnitude
+    }
+    
+    //MARK:- UITextField DELEGATE METHOD
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    
+    //MARK:- DATABSE SAVE + LOAD ITEMS
     func saveItems() {
         do{
             try context.save()
@@ -127,7 +153,7 @@ class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             print("error saving context: \(error)")
         }
     }
-        
+    
     func loadItems() {
         let request: NSFetchRequest<Feels> = Feels.fetchRequest()
         do {
@@ -136,4 +162,6 @@ class sadViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             "error fetching data"
         }
     }
+    
+    
 }

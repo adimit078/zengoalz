@@ -1,5 +1,5 @@
 //
-//  happyViewController.swift
+//  HappyViewController.swift
 //  Zenn Path
 //
 //  Created by Aditya Mittal on 4/7/21.
@@ -8,53 +8,57 @@
 import UIKit
 import CoreData
 
-class happyViewController: UIViewController, UITextFieldDelegate {
+class HappyViewController: UIViewController, UITextFieldDelegate {
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var feelsArray = GlobalVar.globalFeels
-    var feelIndex = GlobalVar.globalFeelIndex
-    var toDoSuccess = Int()
-    
-    var newIndex: String = ""
-    
+    // MARK: - OUTLET
     @IBOutlet weak var activity1Field: UITextField!
     @IBOutlet weak var activity2Feild: UITextField!
-    
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var medButton: UIButton!
     @IBOutlet weak var badButton: UIButton!
     @IBOutlet weak var logItButton: UIButton!
-    
     @IBOutlet weak var bigView: UIView!
     
+    
+    // MARK: - PROPERTY
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var feelsArray = GlobalVar.globalFeels
+    var feelIndex = GlobalVar.globalFeelIndex
+    var toDoSuccess = Int()
+    var newIndex: String = ""
+    
+    
+    
+    // MARK: - LIFE CYCLE
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        loadData()
+        
         self.activity1Field.delegate = self
         self.activity2Feild.delegate = self
         
-        goodButton.layer.cornerRadius = 20
-        goodButton.layer.borderWidth = 1
-        goodButton.layer.borderColor = UIColor.black.cgColor
+        //        goodButton.layer.cornerRadius = 20
+        //        goodButton.layer.borderWidth = 1
+        //        goodButton.layer.borderColor = UIColor.black.cgColor
+        //
+        //        medButton.layer.cornerRadius = 20
+        //        medButton.layer.borderWidth = 1
+        //        medButton.layer.borderColor = UIColor.black.cgColor
+        //
+        //        badButton.layer.cornerRadius = 20
+        //        badButton.layer.borderWidth = 1
+        //        badButton.layer.borderColor = UIColor.black.cgColor
+        //
+        //        logItButton.layer.cornerRadius = 30
+        //        bigView.layer.cornerRadius = 20
         
-        medButton.layer.cornerRadius = 20
-        medButton.layer.borderWidth = 1
-        medButton.layer.borderColor = UIColor.black.cgColor
-        
-        badButton.layer.cornerRadius = 20
-        badButton.layer.borderWidth = 1
-        badButton.layer.borderColor = UIColor.black.cgColor
-        
-        logItButton.layer.cornerRadius = 30
-        bigView.layer.cornerRadius = 20
-
         loadItems()
     }
     
-//How have the ToDos been coming along?
+    //mark:- ALL IBACTION METHOD
     @IBAction func greatToDoPressed(_ sender: UIButton) {
         toDoSuccess = 3
         
@@ -81,8 +85,7 @@ class happyViewController: UIViewController, UITextFieldDelegate {
         goodButton.backgroundColor = UIColor.clear
         medButton.backgroundColor = UIColor.clear
     }
-
-//LOG IT PRESSED
+    
     @IBAction func logItPressed(_ sender: UIButton) {
         //checking that the text box is not empty
         if (activity1Field.text != "" && activity2Feild.text != ""){
@@ -126,12 +129,22 @@ class happyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: - ALL CUSTOM FUNCTION
+    
+    func loadData() {
+        self.activity1Field.delegate = self
+        self.activity2Feild.delegate = self
+        loadItems()
+        
+    }
+    
+    // MARK: - UITextField DELEGATE METHOD
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
     
-//Save + Load Items
+    //MARK:- DATABSE SAVE + LOAD ITEMS
     func saveItems() {
         do{
             try context.save()
@@ -148,5 +161,4 @@ class happyViewController: UIViewController, UITextFieldDelegate {
             "error fetching data"
         }
     }
-    
 }
