@@ -1,23 +1,7 @@
 This is the zengoalz app. (Reffering to most recent commit version)
 
-Currently, there are 2 main versions: 
-    
-    Toodle
-    zengoalz
+The code has been altered to reflect most recent changes:
 
-Toodle was the original version of the project developed in the end months of 2020, during the midst of the pandemic.
-After working on Toodle for a few months, I decided to redo the app as Toodle had some bugs and the UI needed work. "zengoalz" was then created. Currently, it is a work in progress.
+View the app on the app store today: https://apps.apple.com/us/app/zenn-path/id1578801465
 
-Current zengoalz summary:
-
-    Better developed UI with navigation controllers and smooth transitions + better images/buttons
-    Completed ToDo screen with updated interface, working completely
-    "Feels" page completed with both branches
-    Push Notifications for 24 hour reminder (ToDo reminder) 
-    Completed Chart Setup
-    
-Left to do:
-
-    Complete the push Notification Branch (Asses user's ability to complete upcoming ToDo etc.)
-    Complete Feedback Loop
   
