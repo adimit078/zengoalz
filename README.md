@@ -1,4 +1,4 @@
-This is the zengoalz app. (Reffering to most recent commit version)
+This is the zengoalz app. (Referring to most recent commit version)
 
 The code has been altered to reflect most recent changes:
 
